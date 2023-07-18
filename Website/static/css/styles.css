@@ -1,0 +1,100 @@
+
+body {
+    background: linear-gradient(300deg, #0AF785, #0AE5F7, #03E1B4);
+
+}
+
+section {
+    margin: 19% 0%;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+.section-format {
+    margin-left: 12%;
+    margin-right: 12%
+}
+
+.welcome1 {
+    padding: 5%;
+}
+
+.welcome2 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#title-section {
+    margin-top: 150px;
+}
+
+/* LOGIN */
+
+.login-form {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+#login-section {
+    margin-top: 150px;
+}
+
+#password {
+    margin-bottom: 10px;  /* pushes login button down, found id through inspect! */
+}
+
+/* REGISTER */
+
+.register-form {
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+/* BLOG */
+
+.create-post {
+    display:flex;           /* need to display as flex for justify-content to work */
+}
+
+#blog-section {
+    margin-top: 150px;
+}
+
+#submit {
+    margin-top: 20px;
+    align: center;
+}
+
+/* show blog post */
+
+#show-post-section {
+    margin-top: 150px;
+}
+
+.comment {
+    display: flex;
+}
+
+.section-format-comments {
+    margin-left: 15%;
+    margin-right: 15%
+}
+
+#comments-section {
+    margin: 1% 0%;
+    margin-left: 15%;
+    margin-right: 15%
+}
+
+
+/* offcanvas */
+
+.offcanvas {
+    --bs-offcanvas-height: 400px !important;
+}
+
+/* Footer */
+

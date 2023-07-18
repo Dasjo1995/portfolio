@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<section id="show-post-section" class="bg-light rounded section-format">
+    <div class="container-lg pt-2 pb-2">
+        <div class="m-5">
+        <a href="{{ url_for('blog') }}" class="btn btn-primary mb-5"><i class="bi bi-arrow-left-short"></i> Go back to Forum</a>
+        <h1 class="">{{ post.title }}</h1>
+            <hr>
+        <h4>{{ post.subtitle }}</h4>
+        <div class="shadow p-3 mb-3 bg-body rounded mt-3">{{ post.body|safe }}</div> <!-- don't use <p> and add |safe after to remove html arguments-->
+        <span> Posted By
+            <a href="#">{{ post.author.name }}</a>
+            on {{ post.date }}
+        </span>
+        </div>
+        <div class="comment justify-content-center mb-3">
+            <a href="{{ url_for('blog') }}" class="btn btn-sm btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Make a Comment</a>
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Make Comment</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body small">
+                {{ ckeditor.load() }}
+                {{ ckeditor.config(name='body', width=850, height=850) }}
+                {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+              </div>
+
+</div>
+        </div>
+{% if all_comments %}
+    {% for comment in all_comments %}
+
+            <div class="container-lg">
+                <div class="comment align-items-center">
+                            <li class="mt-4 mb-2">
+                                <div class="commentText shadow p-3 mb-2 bg-body rounded">
+                                    <div class="">
+                                        {{ comment.text|safe }}
+                                    </div>
+                                    <span class="date sub-text"><i class="bi bi-person"></i> Posted by: {{ comment.comment_author.name }}</span>
+                                    {% if current_user.id == comment.author_id or current_user.id == 1 %}
+                                        <a href="">Delete</a>
+                                    {% endif %}
+                                </div>
+
+                            </li>
+                </div>
+            </div>
+
+    {% endfor %}
+{% else %}
+    <div>There are no comments yet.</div>
+{% endif %}
+    </div>
+
+</section>
+
+
+{% endblock %}
+
+<!-- Lesson: for the css to display properly, important to not use several words in app route (NOT /post/post-id etc.) -->
