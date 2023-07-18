@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<section class="pt-5 bg-image" style="background-image: url('static/images/lists-pic.jpg'); height: 100vh">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold p-5 text-light text-decoration-underline">Create Your Lists Here</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4 text-light bg-dark rounded border border-light p-5 fw-bold">Create order in all of your responsibilites and make sure that you don't miss a single thing! With the lists you create here you will be able to keep track of several different things at the same time, since you can have several different lists.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center pt-3">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3"><a class="text-decoration-none text-light" href="{{ url_for('make_list') }}">Create new list</a></button>
+            <button type="button" class="btn btn-light btn-lg px-4"><a class="text-decoration-none text-dark" href="{{ url_for('register') }}">Sign-Up</a></button>
+          </div>
+        </div>
+  </div>
+</section>
+
+{% endblock %}

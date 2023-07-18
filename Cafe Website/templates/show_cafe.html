@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<section>
+    <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ selected_cafe.img_url }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3 pb-5">{{ selected_cafe.name }}</h1>
+        <h2 class="lead pb-5">{{ selected_cafe.short_description|safe }}</h2>
+        <table class="table table-primary table-striped table-hover pt-5">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Cafe</th>
+              <th scope="col">{{ selected_cafe.name }}</th>
+            </tr>
+          </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Location</th>
+                  <td>{{ selected_cafe.location }}</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">Address</th>
+                  <td>{{ selected_cafe.address }}</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">Has Toilets</th>
+                  <td colspan="2">{{ selected_cafe.has_toilets }}</td>
+
+                </tr>
+                              <tr>
+                  <th scope="row">Has Wifi</th>
+                  <td colspan="2">{{ selected_cafe.has_wifi }}</td>
+
+                </tr>
+                              <tr>
+                  <th scope="row">Can take calls</th>
+                  <td colspan="2">{{ selected_cafe.can_take_calls }}</td>
+
+                </tr>
+                              <tr>
+                  <th scope="row">Has Toilets</th>
+                  <td colspan="2">{{ selected_cafe.has_toilets }}</td>
+
+                </tr>
+                </tr>
+                <tr>
+                  <th scope="row">Seats</th>
+                  <td colspan="2">{{ selected_cafe.seats }}</td>
+
+                </tr>
+                </tr>
+                <tr>
+                  <th scope="row">Coffee Price</th>
+                  <td colspan="2">${{ selected_cafe.coffee_price }}</td>
+
+                </tr>
+              </tbody>
+    </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

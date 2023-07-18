@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<section id="list-section">
+    <div class="container mt-5 mb-5">
+            <ul class="list-group pb-3">
+              {% for item in list %}
+                {% if item.user_id == current_user.id %}
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ item.list_item }}
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                      <label class="form-check-label pe-5" for="flexSwitchCheckDefault"><i class="bi bi-check-lg"></i></label>
+                        <a class="text-decoration-none ps-5" href=" {{ url_for('delete', list_id=item.id) }}">X</a>
+
+                    </div>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+        {{ wtf.quick_form(form) }}
+    </div>
+</section>
+{% endblock %}
