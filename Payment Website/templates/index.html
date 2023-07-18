@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<section class="pt-5 bg-image" style="background-image: url('static/images/hogwarts3.jpg'); height: 100vh">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold p-5 text-dark">Welcome to WonderStore!</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4 text-dark rounded border border-light p-5 fw-bold">This is the place for luxurious articles that will make you go crazy!</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center pt-3">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3"><a class="text-decoration-none text-light" href="{{ url_for('payment') }}">Buy the Product for $99</a></button>
+                  <form action="{{ url_for('payment') }}" method="POST">
+                    <script
+                        src='https://checkout.stripe.com/checkout.js'
+                        class='stripe-button'
+                        data-key= {{ public_key }}
+                        data-amount='200'
+                        data-name='Purchase'
+                        data-description='Purchase'
+                        data-locale='auto'
+                        data-zip-code='true'>
+                    </script>
+                </form>
+          </div>
+        </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+
+.control-label {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.form-control {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz-format {
+    padding-right: 280px;
+    padding-left: 280px;
+}
+
+#submit {
+    margin-top: 10px;
+    background-color: #ffc107;
+    font-weight: bold;
+}

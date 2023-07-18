@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block content %}
+<section class="pb-5">
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="d-flex content-justify-center" id="form-content">
+        {{ wtf.quick_form(form) }}
+    </div>
+        <div>
+            <img src="{{ url_for('static', filename='new-img.jpg') }}" class="d-block mx-lg-auto img-fluid rounded" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+
+        </div>
+        <div class="container">
+            <h1 class="text-center mt-3">The most common colors are:</h1>
+            <div>
+            <img src="{{ url_for('static', filename='pie-chart.jpg') }}" class="d-block mx-lg-auto img-fluid rounded" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

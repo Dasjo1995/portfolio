@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    <h1>Stripe Payment Example</h1>
+    <form action="{{ url_for('payment') }}" method="POST">
+        <script
+            src='https://checkout.stripe.com/checkout.js'
+            class='stripe-button'
+            data-key='{{public_key}}'
+            data-amount='200'
+            data-name='Purchase'
+            data-description='Purchase'
+            data-locale='auto'
+            data-zip-code='true'>
+        </script>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<section class="pt-5 bg-image" style="background-image: url('static/images/hogwarts3.jpg'); height: 100vh">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold p-5 text-warning">Welcome to PotterInfo!<i class="bi bi-lightning text-warning"></i></h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4 text-warning rounded border border-light p-5 fw-bold">Do you feel like you know everything there is to know about the world of Harry Potter? Here you can find out if you truly know everything - press the button below to find out more information about random characters in Harry Potter!</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center pt-3">
+            <button type="button" class="btn btn-warning btn-lg px-4 gap-3"><a class="text-decoration-none text-dark" href="{{ url_for('characters') }}">See Random Character</a></button>
+          </div>
+        </div>
+  </div>
+</section>
+
+{% endblock %}
