@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block content %}
+<section id="login-section" class="section-format bg-light rounded">
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center mt-5">Welcome!</h1>
+        </div>
+        <div class="row">
+            <h5 class="text-center mt-2 text-muted">Please fill in the information below to register.</h5>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mx-auto content register-form">
+                {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
